@@ -23,7 +23,6 @@ class Game:
 
 
   def __init__(self):
-    
     self.b_playing = True
     self.player = Player.Player(Game.demo_user_values["forename"],
                                 Game.demo_user_values["surname"],
@@ -31,9 +30,11 @@ class Game:
                                 Game.demo_user_values["role"],
                                 Game.demo_user_values["id"],
                                 Game.demo_user_values["is_customer_facing"])
-    self.hacker = Actor.Actor()
+    self.hacker = Actor.Actor(self.player)
     self.narrative = Narrative_Builder.Narrative_Builder()
-
+    print(self.hacker.get_applicable_hackers())
+    #for hacker in self.hacker.hackers_list:
+    #  if self.hacker.
 
     # Sanity Checks
     # alpha = self.player.get_full_name()
@@ -92,6 +93,10 @@ class Game:
     
     return
 
+
+  def request_input(self):
+    selection = input("Please give your selection:")
+    return selection
 
 
 if __name__ == "__main__":
