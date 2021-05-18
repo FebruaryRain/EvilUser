@@ -64,7 +64,7 @@ class Game:
     return
 
   def play_game(self):
-    print()
+    #self.request_input()
     return
 
   def print_opening_splash(self):
