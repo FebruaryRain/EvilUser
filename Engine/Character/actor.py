@@ -1,4 +1,4 @@
-
+from .hacker import Hacker
 
 class Actor(Hacker):
 

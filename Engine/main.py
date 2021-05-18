@@ -1,7 +1,6 @@
 from User import player as Player
-#from Hacker import Hacker
-#from Narrative_builder import Narrative_builder
-
+from Character import actor as Actor
+from Narrative import narrative_builder as Narrative_Builder
 
 
 class Game:
@@ -11,12 +10,40 @@ class Game:
   This is a class that acts as a controller for all other classes, coordinating them. 
   Please use help(Game) to see the functions.
   """
+
+  # Dummy values used in testing
+  # Live version is hoped to speak with a database
+  demo_user_values = {}
+  demo_user_values["forename"] = "Matt"
+  demo_user_values["surname"] = "Damon"
+  demo_user_values["email"] = "matt.damon@LBG.ac.uk"
+  demo_user_values["role"] = "Customer Person"
+  demo_user_values["id"] = "112358"
+  demo_user_values["is_customer_facing"] = True
+
+
   def __init__(self):
-    self.b_playing = True
-    self.player = Player.Player()
-    #self.hacker = Hacker()
-    #self.narrative = Narrative_builder()
     
+    self.b_playing = True
+    self.player = Player.Player(Game.demo_user_values["forename"],
+                                Game.demo_user_values["surname"],
+                                Game.demo_user_values["email"],
+                                Game.demo_user_values["role"],
+                                Game.demo_user_values["id"],
+                                Game.demo_user_values["is_customer_facing"])
+    self.hacker = Actor.Actor()
+    self.narrative = Narrative_Builder.Narrative_Builder()
+
+
+    # Sanity Checks
+    # alpha = self.player.get_full_name()
+    # print(alpha)
+    # print(self.player._forename)
+    # print(self.player.get_role())
+
+
+    self.print_opening_splash()
+    self.run_main_loop()
     return
 
 
@@ -29,9 +56,9 @@ class Game:
       # safety to escape an infinite loop
       if safety_catch == 5:
         self.b_playing = False
+        print("safety catch used!")
       else:
         safety_catch +=1
-        print(safety_catch)
 
     return
 
@@ -69,4 +96,3 @@ class Game:
 
 if __name__ == "__main__":
   game = Game()
-  game.run_main_loop()

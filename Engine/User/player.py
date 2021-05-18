@@ -13,8 +13,8 @@ class Player:
               id = "", 
               is_customer_facing = False
               ):
-    self._forename = ""
-    self._surname = ""
+    self._forename = forename
+    self._surname = surname
     self.email = email
     self._role = role
     self._id = id
@@ -32,7 +32,8 @@ class Player:
 
 
   def get_full_name(self):
-    return self._forename + " " + self._surname 
+    full_name = self._forename + " " + self._surname 
+    return full_name
 
 
   def get_id(self):
