@@ -9,6 +9,7 @@ class Actor(Hacker):
     self.set_player(Player)
     self.applicable_hackers = []
     self.set_applicable_hackers()
+    self.chosen_hacker_info = None #
 
     # Sanity Checks
     #print(self.first_name)
@@ -33,6 +34,11 @@ class Actor(Hacker):
     return self.applicable_hackers
 
 
+  def set_applicable_hacker(self, chosen_hacker):
+    self.current_hacker = chosen_hacker
+    return
+
+
   def set_player(self, Player):
     try:
       #if type(Player) != None:
@@ -42,3 +48,11 @@ class Actor(Hacker):
     except:
       print("We don't have a player defined! \n Please close and restart the game, there has been an error!")
     return
+
+  def set_chosen_hacker_info(self, info):
+    if info != None:
+      self.chosen_hacker_info = info
+      # Sanity check
+      print("CHOSEN HACKER INFO:", self.chosen_hacker_info)
+    else:
+      print("You tried to set the actor.chosen_hacker_info but it was of a None value!")
