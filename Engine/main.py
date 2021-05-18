@@ -1,6 +1,7 @@
-#from Player import Player
-#from Hacker import Hacker
-#from Narrative_builder import Narrative_builder
+from User import player as Player
+from Character import actor as Actor
+from Narrative import narrative_builder as Narrative_Builder
+from Scenario import scenario as Scenario
 
 class Game:
   """
@@ -9,12 +10,42 @@ class Game:
   This is a class that acts as a controller for all other classes, coordinating them. 
   Please use help(Game) to see the functions.
   """
+
+  # Dummy values used in testing
+  # Live version is hoped to speak with a database
+  demo_user_values = {}
+  demo_user_values["forename"] = "Matt"
+  demo_user_values["surname"] = "Damon"
+  demo_user_values["email"] = "matt.damon@LBG.ac.uk"
+  demo_user_values["role"] = "Customer Person"
+  demo_user_values["id"] = "112358"
+  demo_user_values["is_customer_facing"] = True
+
+
   def __init__(self):
     self.b_playing = True
-    #self.player = Player()
-    #self.hacker = Hacker()
-    #self.narrative = Narrative_builder()
-    
+    self.player = Player.Player(Game.demo_user_values["forename"],
+                                Game.demo_user_values["surname"],
+                                Game.demo_user_values["email"],
+                                Game.demo_user_values["role"],
+                                Game.demo_user_values["id"],
+                                Game.demo_user_values["is_customer_facing"])
+    self.hacker = Actor.Actor(self.player)
+    self.narrative = Narrative_Builder.Narrative_Builder()
+    self.scenario = Scenario.Scenario(self.hacker)
+    #print(self.hacker.get_applicable_hackers())
+    #for hacker in self.hacker.hackers_list:
+    #  if self.hacker.
+
+    # Sanity Checks
+    # alpha = self.player.get_full_name()
+    # print(alpha)
+    # print(self.player._forename)
+    # print(self.player.get_role())
+
+
+    self.print_opening_splash()
+    self.run_main_loop()
     return
 
 
@@ -25,17 +56,74 @@ class Game:
       self.play_game()
 
       # safety to escape an infinite loop
-      if safety_catch == 5:
+      if safety_catch == 1:
         self.b_playing = False
+        print("safety catch used!")
       else:
         safety_catch +=1
-        print(safety_catch)
 
     return
 
   def play_game(self):
-    print()
+    self.ask_for_hacker_selection()
     return
+
+
+  def ask_for_hacker_selection(self):
+    self.print_numbered_options_in_iterable(self.hacker.get_applicable_hackers(), "actor_type")
+    b_seeking_input = True
+    while b_seeking_input:
+      response = None
+      try:
+        response = int(self.request_input())
+        if response <= len(self.hacker.get_applicable_hackers()) and response != 0:
+          b_seeking_input = False
+        else:
+          print("Please ensure that your input is a specified number!")
+      except: 
+        print("Please ensure that your input is a specified number!")
+        #print("Unknown Error!")
+      
+    print(self.hacker.get_applicable_hackers()[response-1])
+    self.hacker.set_chosen_hacker_info(self.hacker.get_applicable_hackers()[response-1])
+    return
+
+
+  def print_numbered_options_in_iterable(self, iterable, field = None):
+    """
+    iterable var can be of dict or list. 
+    If of type dict, field must be set as one of the expected dictionary entries (dict[field]).
+    If of type list, field must be set as type int, indicating a positional value wanted to print.
+    """
+
+    num = 1 # Ooh, we do hate a magic number but here it makes sense (for now)
+
+    for element in iterable:
+    # deal with dicts
+      if isinstance(element, dict):
+        if field == None:
+          print("There has been a terrible error, the passed var was full of dicts but no field has been selected, please ensure the field is selected!")
+          raise Exception
+        else:
+          try:
+              print(str(num) + " => " + str(element[field]))
+          except:
+            pass
+        num +=1
+
+    # deal with lists
+      elif isinstance(element, list):
+        if field == None:
+          print(str(num) + " => " + str(element))
+        else:
+          if type(field) == "int":
+            print(element[field])
+          else: 
+            print("There has been a terrible error, the passed var was full of lists but field was set to not a string, a dict may have been expected!")
+            #raise Exception
+        num +=1
+    return
+
 
   def print_opening_splash(self):
     self.print_title()
@@ -64,7 +152,19 @@ class Game:
     return
 
 
+  def request_input(self):
+    try:
+      selection = input("Please give your selection:")
+    except: 
+      print("entry was not an int!")
+      print("here",type(selection), selection)
+      if selection == "EXIT":
+        self.b_playing = False
+      else:
+        print("Please ensure that your input is a specified number!")
+      
+    return selection
+
 
 if __name__ == "__main__":
   game = Game()
-  game.run_main_loop()
