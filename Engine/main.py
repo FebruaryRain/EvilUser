@@ -1,6 +1,8 @@
-#from Player import Player
+from User import player as Player
 #from Hacker import Hacker
 #from Narrative_builder import Narrative_builder
+
+
 
 class Game:
   """
@@ -11,7 +13,7 @@ class Game:
   """
   def __init__(self):
     self.b_playing = True
-    #self.player = Player()
+    self.player = Player.Player()
     #self.hacker = Hacker()
     #self.narrative = Narrative_builder()
     
