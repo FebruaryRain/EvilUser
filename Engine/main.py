@@ -3,6 +3,8 @@ from Character import actor as Actor
 from Narrative import narrative_builder as Narrative_Builder
 from Scenario import scenario as Scenario
 
+import sys
+
 class Game:
   """
   Game class
@@ -22,14 +24,17 @@ class Game:
   demo_user_values["is_customer_facing"] = True
 
 
-  def __init__(self):
+  def __init__(self, is_in_demo_mode):
     self.b_playing = True
-    self.player = Player.Player(Game.demo_user_values["forename"],
-                                Game.demo_user_values["surname"],
-                                Game.demo_user_values["email"],
-                                Game.demo_user_values["role"],
-                                Game.demo_user_values["id"],
-                                Game.demo_user_values["is_customer_facing"])
+    if is_in_demo_mode:
+      self.player = Player.Player(Game.demo_user_values["forename"],
+                                  Game.demo_user_values["surname"],
+                                  Game.demo_user_values["email"],
+                                  Game.demo_user_values["role"],
+                                  Game.demo_user_values["id"],
+                                  Game.demo_user_values["is_customer_facing"])
+    else:
+      self.player = Player.Player(input("What is your forename? "), input("What is your surname? "), input("What is your email? "), input("What is your role? "), input("What is your employee id? "), input("Is your role customer facing? "))
     self.hacker = Actor.Actor(self.player)
     self.narrative = Narrative_Builder.Narrative_Builder()
     self.scenario = Scenario.Scenario(self.hacker)
@@ -167,4 +172,7 @@ class Game:
 
 
 if __name__ == "__main__":
-  game = Game()
+  demo = False
+  if len(sys.argv) > 1:
+    demo = sys.argv[1]
+  game = Game(demo)
