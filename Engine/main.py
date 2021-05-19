@@ -32,12 +32,19 @@ class Game:
                                   Game.demo_user_values["email"],
                                   Game.demo_user_values["role"],
                                   Game.demo_user_values["id"],
-                                  Game.demo_user_values["is_customer_facing"])
+                                  Game.demo_user_values["is_customer_facing"]
+                                  )
     else:
-      self.player = Player.Player(input("What is your forename? "), input("What is your surname? "), input("What is your email? "), input("What is your role? "), input("What is your employee id? "), input("Is your role customer facing? "))
-    self.hacker = Actor.Actor(self.player)
-    self.narrative = Narrative_Builder.Narrative_Builder()
-    self.scenario = Scenario.Scenario(self.hacker)
+      self.player = Player.Player(input("What is your forename? "), 
+                                  input("What is your surname? "), 
+                                  input("What is your email? "), 
+                                  input("What is your role? "), 
+                                  input("What is your employee id? "), 
+                                  input("Is your role customer facing? ")
+                                  )
+    self.hacker = None
+    self.narrative =None
+    self.scenario = None
     #print(self.hacker.get_applicable_hackers())
     #for hacker in self.hacker.hackers_list:
     #  if self.hacker.
@@ -70,7 +77,14 @@ class Game:
     return
 
   def play_game(self):
+    self.hacker = Actor.Actor(self.player)
     self.ask_for_hacker_selection()
+    
+    self.scenario = Scenario.Scenario(self.hacker)
+
+
+
+    self.narrative = Narrative_Builder.Narrative_Builder()
     return
 
 
@@ -159,7 +173,7 @@ class Game:
 
   def request_input(self):
     try:
-      selection = input("Please give your selection:")
+      selection = input("Please give your selection: ")
     except: 
       print("entry was not an int!")
       print("here",type(selection), selection)
