@@ -29,21 +29,16 @@ class Act1:
     # Start Scenario
     self.select_scenario_description()
     self.generate_options()
-    print(self.get_narrative_description())
-    print(self.give_background_to_current_activity())
-    #print(self.options)
     self.display_options_descriptions()
     selection = self.request_input(len(self.options))
     self.chosen_option = self.options[selection-1]
-    print("You have chosen " + self.chosen_option.option_descriptor)
-    print(self.chosen_option.actions_descriptor)
+    print("You have chosen: " + self.chosen_option.option_descriptor)
     return
 
 
   def display_options_descriptions(self):
     num = 1
     for item in self.options:
-      print(item)
       print(str(num) + " => " + str(item.option_descriptor))
       num += 1
     return
@@ -82,10 +77,10 @@ How do you want to gather information on your targets today?
       install_malware_recce_option1 = Option(self.act_number, descriptor, actions_descriptor)
       descriptor = "Check social media for supply chain partners to impersonate"
       actions_descriptor = "Sweeping eyes back and forth over news articles and organisation websites, a shortlist of partner companies is compiled, pathing the way to the back door!"
-      install_malware_recce_option2 = Option(self.act_number, descriptor, actions_descriptor) #("Check social media for supply chain partners to impersonate")
+      install_malware_recce_option2 = Option(self.act_number, descriptor, actions_descriptor)
       descriptor = "Search for organisational information and charts"
       actions_descriptor = "Company websites are always keen to show off 'The Team' - today the team will be marionettes in a deception."
-      install_malware_recce_option3 = Option(self.act_number, descriptor, actions_descriptor) #("Search for organisational information and charts")
+      install_malware_recce_option3 = Option(self.act_number, descriptor, actions_descriptor)
 
       self.options.append(install_malware_recce_option1)
       self.options.append(install_malware_recce_option2)
@@ -94,10 +89,10 @@ How do you want to gather information on your targets today?
     if self.hacker_objective == "steal_card_details":
       descriptor = "Gather information on a target from social media"
       actions_descriptor = "The target was keen to share their personal life on social media - now armed with a keener understanding of the target, the next phase can begin"
-      steal_card_details_recce_option1 = Option(self.act_number, descriptor, actions_descriptor) #("Gather information on a target from social media")
+      steal_card_details_recce_option1 = Option(self.act_number, descriptor, actions_descriptor)
       descriptor = "Procure a large number of phone numbers from illicit vendor"
       actions_descriptor = "The dark web isn't as hard to get onto as people think, and a list of known good phone numbers to 'cold call' with a text costs less than one might think"
-      steal_card_details_recce_option2 = Option(self.act_number, descriptor, actions_descriptor) #("Procure a large number of phone numbers from illicit vendor")
+      steal_card_details_recce_option2 = Option(self.act_number, descriptor, actions_descriptor)
 
       self.options.append(steal_card_details_recce_option1)
       self.options.append(steal_card_details_recce_option2)
@@ -105,13 +100,13 @@ How do you want to gather information on your targets today?
     if self.hacker_objective == "gain_payment":
       descriptor = "Get number for internal offices"
       actions_descriptor = "Company websites are often poorly mapped and it's not difficult to root around and find other numbers than the customer service line with a little patience"
-      gain_payment_recce_option1 = Option(self.act_number, descriptor, actions_descriptor) #("Get number for internal offices")
+      gain_payment_recce_option1 = Option(self.act_number, descriptor, actions_descriptor)
       descriptor = "Get internal phone extensions for those who make payments"
       actions_descriptor = "A little charm and a plausible scenario can get others to share extension numbers relatively easily."
-      gain_payment_recce_option2 = Option(self.act_number, descriptor, actions_descriptor) #("Get internal phone extensions for those who make payments")
+      gain_payment_recce_option2 = Option(self.act_number, descriptor, actions_descriptor)
       descriptor = "Find out who the bank regularly makes payments to"
       actions_descriptor = "Get in touch with the right people and they can reveal who the organisation regularly interacts with"
-      gain_payment_recce_option3 = Option(self.act_number, descriptor, actions_descriptor) #("Find out who the bank regularly makes payments to")
+      gain_payment_recce_option3 = Option(self.act_number, descriptor, actions_descriptor)
 
       self.options.append(gain_payment_recce_option1)
       self.options.append(gain_payment_recce_option2)
@@ -141,8 +136,8 @@ How do you want to gather information on your targets today?
         else:
           print("Please ensure that you select one of the valid options!")
       except: 
-        print("entry was not an int!")
-        print("here",type(selection), selection)
+        print("Entry was not an int!")
+        print("You entered:", type(selection), selection)
         if selection == "EXIT":
           self.b_playing = False
         else:
