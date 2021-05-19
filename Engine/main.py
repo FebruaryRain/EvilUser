@@ -5,6 +5,7 @@ from Scenario import scenario as Scenario
 
 import sys
 
+
 class Game:
   """
   Game class
@@ -76,6 +77,7 @@ class Game:
 
     return
 
+
   def play_game(self):
     self.hacker = Actor.Actor(self.player)
     self.ask_for_hacker_selection()
@@ -97,20 +99,22 @@ class Game:
 
   def ask_for_hacker_selection(self):
     self.print_numbered_options_in_iterable(self.hacker.get_applicable_hackers(), "actor_type")
-    b_seeking_input = True
-    while b_seeking_input:
-      response = None
-      try:
-        response = int(self.request_input())
-        if response <= len(self.hacker.get_applicable_hackers()) and response != 0:
-          b_seeking_input = False
-        else:
-          print("Please ensure that your input is a specified number!")
-      except: 
-        print("Please ensure that your input is a specified number!")
-        #print("Unknown Error!")
+    #b_seeking_input = True
+    #while b_seeking_input:
+    #response = None
+    #try:
+    print(len(self.hacker.get_applicable_hackers()))
+    response = self.request_input(len(self.hacker.get_applicable_hackers()))
+    #if response <= len(self.hacker.get_applicable_hackers()) and response != 0:
+    #  b_seeking_input = False
+    #else:
+    #  print("Please ensure that your input is a specified number!")
+    #except: 
+    #  print("Please ensure that your input is a specified number!")
+      #print("Unknown Error!")
       
-    print(self.hacker.get_applicable_hackers()[response-1])
+    #print(self.hacker.get_applicable_hackers()[response-1])
+    print(response)
     self.hacker.set_chosen_hacker_info(self.hacker.get_applicable_hackers()[response-1])
     return
 
@@ -192,17 +196,26 @@ class Game:
     return
 
 
-  def request_input(self):
-    try:
-      selection = input("Please give your selection: ")
-    except: 
-      print("entry was not an int!")
-      print("here",type(selection), selection)
-      if selection == "EXIT":
-        self.b_playing = False
-      else:
-        print("Please ensure that your input is a specified number!")
-      
+  def request_input(self, options_range):
+    selection = None
+    b_selection_not_good = True
+    while b_selection_not_good:
+      try:
+        selection = int(input("Please give your selection: "))
+        if selection in range(1, options_range+1):
+          b_selection_not_good = False
+        else:
+          b_selection_not_good = True
+      except: 
+        print("Entry was not an int!")
+        print("You entered:", type(selection), selection)
+        if selection == "EXIT":
+          self.b_playing = False
+          print("Attempting to exit the game...")
+          break
+        else:
+          print("Please ensure that your input is a specified number!")
+
     return selection
 
 

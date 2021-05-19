@@ -10,6 +10,7 @@ class Narrative_Builder:
 
     return
 
+
   def pretty_print_narrative(self):
     for option in self.options_list:
       phase_name = ""
@@ -26,6 +27,7 @@ class Narrative_Builder:
     for option in self.options_list:
       print(option.get_actions_descriptor())
     return
+
 
   def print_ending(self):
     print("And so, this was the story of how you could have been hacked.")

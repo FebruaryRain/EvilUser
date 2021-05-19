@@ -49,6 +49,7 @@ ADDR_SPEC = LOCAL_PART + r'@' + DOMAIN               # see 3.4.1
 # A valid address will match exactly the 3.4.1 addr-spec.
 VALID_ADDRESS_REGEXP = '^' + ADDR_SPEC + '$'
 
+
 def validate_email(email):
     try:
         assert re.match(VALID_ADDRESS_REGEXP, email) is not None

@@ -13,5 +13,6 @@ class Option:
   def get_option_descriptor(self):
     return self.option_descriptor
 
+
   def get_actions_descriptor(self):
     return self.actions_descriptor

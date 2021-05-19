@@ -44,8 +44,10 @@ class Player:
     self._id = id
     return
 
+
   def get_is_customer_facing(self):
     return self._is_customer_facing
+
 
   def set_is_customer_facing(self, is_customer_facing = False):
     self._is_customer_facing = is_customer_facing

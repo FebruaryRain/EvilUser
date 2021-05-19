@@ -66,6 +66,7 @@ How do you want to gather information on your targets today?
     """
     return background_blurb
 
+
   def generate_options(self):
 
     if self.hacker_objective == "install_malware":
@@ -115,12 +116,6 @@ How do you want to gather information on your targets today?
   def get_narrative_description(self):
     return self.narrative_description
 
-  def create_options(self):
-    return
-
-
-  def get_outcome(self):
-    return
 
   def request_input(self, options_range):
     selection = None
