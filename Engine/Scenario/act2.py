@@ -16,7 +16,6 @@ class Act2:
     self.objective_descriptor = ""
     self.narrative_description = ""
     self.options = []
-    #self.outcome = None
     self.chosen_option = None
     return
 

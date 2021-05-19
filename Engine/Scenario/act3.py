@@ -16,7 +16,6 @@ class Act3:
     self.objective_descriptor = ""
     self.narrative_description = ""
     self.options = []
-    #self.outcome = None
     self.chosen_option = None
     return
 
@@ -45,8 +44,6 @@ class Act3:
 
 
   def select_scenario_description(self):
-    #objective_descriptor = ""
-
     if self.hacker_objective == "install_malware":
       self.objective_descriptor = "install malware on a LBG device"
     if self.hacker_objective == "steal_card_details":
@@ -136,8 +133,8 @@ How do you want to gather information on your targets today?
         else:
           print("Please ensure that you select one of the valid options!")
       except: 
-        print("entry was not an int!")
-        print("here",type(selection), selection)
+        print("Entry was not an int!")
+        print("You entered:", type(selection), selection)
         if selection == "EXIT":
           self.b_playing = False
         else:

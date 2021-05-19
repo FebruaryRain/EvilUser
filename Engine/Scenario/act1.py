@@ -16,7 +16,6 @@ class Act1:
     self.objective_descriptor = ""
     self.narrative_description = ""
     self.options = []
-    #self.outcome = None
     self.chosen_option = None
     return
 
@@ -45,8 +44,6 @@ class Act1:
 
 
   def select_scenario_description(self):
-    #objective_descriptor = ""
-
     if self.hacker_objective == "install_malware":
       self.objective_descriptor = "install malware on a LBG device"
     if self.hacker_objective == "steal_card_details":
@@ -144,9 +141,3 @@ How do you want to gather information on your targets today?
           print("Please ensure that your input is a specified number!")
       
     return selection
-
-
-# narrative_description
-# options
-# outcome
-# get_narrative_description()
