@@ -81,6 +81,7 @@ class Game:
     self.ask_for_hacker_selection()
     
     self.scenario = Scenario.Scenario(self.hacker)
+    self.scenario.generate_scenario()
 
 
 
