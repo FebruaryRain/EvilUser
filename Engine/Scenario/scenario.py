@@ -42,4 +42,5 @@ class Scenario:
     self.options_selected.append(self.act2.get_chosen_option())
     self.options_selected.append(self.act3.get_chosen_option())
 
-    return
+  def get_options_selected(self):
+    return self.options_selected

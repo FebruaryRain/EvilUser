@@ -83,9 +83,15 @@ class Game:
     self.scenario = Scenario.Scenario(self.hacker)
     self.scenario.generate_scenario()
 
+    #self.scenario.get_options_selected()
+    #for i in self.scenario.get_options_selected():
+    #  print(i.option_descriptor)
+    #  print(i.actions_descriptor)
 
 
-    self.narrative = Narrative_Builder.Narrative_Builder()
+    self.narrative = Narrative_Builder.Narrative_Builder(self.scenario.get_options_selected(), self.hacker, self.player)
+    self.narrative.pretty_print_narrative()
+    self.narrative.print_ending()
     return
 
 

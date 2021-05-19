@@ -8,3 +8,10 @@ class Option:
     self.actions_descriptor = actions_descriptor
     self.action_taken = False
     return
+
+
+  def get_option_descriptor(self):
+    return self.option_descriptor
+
+  def get_actions_descriptor(self):
+    return self.actions_descriptor
