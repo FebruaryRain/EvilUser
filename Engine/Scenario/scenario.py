@@ -13,9 +13,6 @@ class Scenario:
     self.act2 = None
     self.act3 = None
     self.options_selected = []
-    # Sanity Checks
-    #print(self.act1)
-    #print("This is the Scenario!")
     return
 
   def generate_scenario(self):
@@ -34,10 +31,6 @@ class Scenario:
 
 
   def create_full_narrative(self):
-    # Sanity Checks
-    print(self.act1.get_chosen_option().actions_descriptor)
-    print(self.act2.get_chosen_option().actions_descriptor)
-    print(self.act3.get_chosen_option().actions_descriptor)
     self.options_selected.append(self.act1.get_chosen_option())
     self.options_selected.append(self.act2.get_chosen_option())
     self.options_selected.append(self.act3.get_chosen_option())

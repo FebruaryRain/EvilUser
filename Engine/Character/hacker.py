@@ -42,11 +42,6 @@ class Hacker:
     return
 
 
-  def get_full_name(self):
-    full_name = self.first_name + " " + self.surname
-    return full_name
-
-
   def generate_first_name(self):
     first_name_list = ["Sandra","Victor","Michael","Anna","Brian","Belle","Shelley","William"]
     self.first_name = random.choice(first_name_list)
@@ -59,13 +54,10 @@ class Hacker:
     return 
 
 
+  def get_full_name(self):
+    full_name = self.first_name + " " + self.surname
+    return full_name
+
+
   def get_hackers_list(self):
     return self.hackers_list
-
-# reconnaissance
-# first_name
-# surname
-# current_objective
-# generate_character()
-# generate_first_name()
-# generate_surname()

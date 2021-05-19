@@ -20,15 +20,14 @@ class Player:
     self._id = id
     self._is_customer_facing = is_customer_facing
     self.score = 0.0
-
-
-  def set_role(self, role = ""):
-    self._role = role
     return
 
+  def get_id(self):
+    return self._id
 
-  def get_role(self):
-    return self._role
+
+  def get_is_customer_facing(self):
+    return self._is_customer_facing
 
 
   def get_full_name(self):
@@ -36,8 +35,8 @@ class Player:
     return full_name
 
 
-  def get_id(self):
-    return self._id
+  def get_role(self):
+    return self._role
 
 
   def set_id(self, id = ""):
@@ -45,10 +44,11 @@ class Player:
     return
 
 
-  def get_is_customer_facing(self):
-    return self._is_customer_facing
-
-
   def set_is_customer_facing(self, is_customer_facing = False):
     self._is_customer_facing = is_customer_facing
+    return
+
+
+  def set_role(self, role = ""):
+    self._role = role
     return

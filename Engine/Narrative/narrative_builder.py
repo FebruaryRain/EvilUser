@@ -12,13 +12,14 @@ class Narrative_Builder:
 
 
   def pretty_print_narrative(self):
+    print("")
     for option in self.options_list:
       phase_name = ""
-      if option.act == 1:
-        phase_name = "Recconnaisance"
-      if option.act == 2:
+      if option.get_act() == 1:
+        phase_name = "Reconnaissance"
+      if option.get_act() == 2:
         phase_name = "Infiltration"
-      if option.act == 3:
+      if option.get_act() == 3:
         phase_name = "Exploitation"
       print("*** In the" + " " + phase_name + " " + "phase, the hacker," + " " + self.hacker.get_full_name() + ", " + "chose to:")
       print(option.get_option_descriptor())
@@ -30,6 +31,7 @@ class Narrative_Builder:
 
 
   def print_ending(self):
+    print("")
     print("And so, this was the story of how you could have been hacked.")
     print("")
     print("Yes, you." + " " + self.player.get_full_name() + "\n")

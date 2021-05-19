@@ -46,16 +46,12 @@ class Game:
     self.hacker = None
     self.narrative =None
     self.scenario = None
-    #print(self.hacker.get_applicable_hackers())
-    #for hacker in self.hacker.hackers_list:
-    #  if self.hacker.
 
     # Sanity Checks
     # alpha = self.player.get_full_name()
     # print(alpha)
     # print(self.player._forename)
     # print(self.player.get_role())
-
 
     self.print_opening_splash()
     self.run_main_loop()
@@ -69,7 +65,7 @@ class Game:
       self.play_game()
 
       # safety to escape an infinite loop
-      if safety_catch == 1:
+      if safety_catch == 0:
         self.b_playing = False
         print("safety catch used!")
       else:
