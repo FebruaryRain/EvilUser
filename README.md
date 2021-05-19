@@ -2,7 +2,7 @@ EvilUser
 ========
 
 Lloyds x IBM Hackathon project
-------------------------------
+-------------------------------------
 
 How to run from terminal to use curses:
 

@@ -34,7 +34,12 @@ class Game:
                                   Game.demo_user_values["id"],
                                   Game.demo_user_values["is_customer_facing"])
     else:
-      self.player = Player.Player(input("What is your forename? "), input("What is your surname? "), input("What is your email? "), input("What is your role? "), input("What is your employee id? "), input("Is your role customer facing? "))
+      self.player = Player.Player(input("What is your forename? "),
+                                  input("What is your surname? "),
+                                  input("What is your email? "),
+                                  input("What is your role? "),
+                                  input("What is your employee id? "),
+                                  input("Is your role customer facing? "))
     self.hacker = Actor.Actor(self.player)
     self.narrative = Narrative_Builder.Narrative_Builder()
     self.scenario = Scenario.Scenario(self.hacker)
