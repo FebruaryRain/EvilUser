@@ -53,7 +53,10 @@ class Narrative_Builder:
     print("")
     print("Yes, you." + " " + self.player.get_full_name() + "\n")
     print("")
+    print("But what would all of this looked like? ")
+    print("What would you have seen, had this attack happened? Please see below for more!")
+    print("\n")
+    print("WIP: Add the examples of each stage below!")
     print("Through this exercise, we hope you can see how a hacker operates; the techniques and tricks they use in order to gather information from seemingly innocuous sources, and chain these together to be able to later carry out an attack using a variety of methods.")
     print("Please see below, for examples of how the scenario the hacker," + " " + self.hacker.get_full_name() + ", " + "might have targetted you.")
-    print("WIP: Add the examples of each stage below!")
     return
