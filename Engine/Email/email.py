@@ -1,6 +1,9 @@
 from email.utils import parseaddr
 from Utils.email_validator import validate_email
-import curses
+try:
+    import curses
+except:
+    ""
 import hashlib
 
 class Email():
@@ -71,15 +74,24 @@ class Email():
         return True
     
     def __str__(self):
-        curses.setupterm()
-        string = "="*curses.tigetnum("cols")
+        try:
+            curses.setupterm()
+            string = "="*curses.tigetnum("cols")
+        except:
+            string = "="*80
         string += "Sender: " + self.sender
         string += "\nRecipient: " + self.recipient
         string += "\ncc: " + ''.join(self.cc)
         string += "\nSubject: " + self.subject
-        string += "\n"+("="*curses.tigetnum("cols"))
+        try:
+            string += "\n"+("="*curses.tigetnum("cols"))
+        except:
+            string += "\n"+("="*80)
         string += "\nContents: \n\n" + self.contents
-        string += "\n"+("="*curses.tigetnum("cols"))
+        try:
+            string += "\n"+("="*curses.tigetnum("cols"))
+        except:
+            string += "\n"+("="*80)
         return string
 
         

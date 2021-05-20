@@ -1,5 +1,8 @@
 from .email import Email
-import curses
+try:
+    import curses
+except:
+    ""
 from Utils.multi_line_input import *
 class Email_Client():
     emails = {
@@ -28,9 +31,12 @@ class Email_Client():
         self.read_email_by_uid_in_folder("inbox", uid)
 
     def compose_email(self, player_email):
-        curses.setupterm()
-        curses.update_lines_cols()
-        print("="*curses.tigetnum("cols"))
+        try:
+            curses.setupterm()
+            curses.update_lines_cols()
+            print("="*curses.tigetnum("cols"))
+        except:
+            print("="*80)
         sender = player_email
         recipient = input("Recipient: ")
         print("Use ctrl+D to cancel.")
@@ -41,7 +47,10 @@ class Email_Client():
         print("Use ctrl+D to cancel.")
         print("Contents:")
         contents = multi_line_input()
-        print("="*curses.tigetnum("cols"))
+        try:
+            print("="*curses.tigetnum("cols"))
+        except:
+            print("="*80)
         if input("Send email? [y/n] ").lower() == 'y':
             self.send_email(Email(sender, recipient, contents, subject, cc.splitlines(), bcc.splitlines()))
         elif input("Save email? [y/n] ").lower() == "y":
@@ -52,15 +61,21 @@ class Email_Client():
         if folder not in folders:
             print(folder + " is not a folder")
             return
-        curses.setupterm()
-        curses.update_lines_cols()
-        print("="*curses.tigetnum("cols"))
+        try:
+            curses.setupterm()
+            curses.update_lines_cols()
+            print("="*curses.tigetnum("cols"))
+        except:
+            print(("="*80))
         for i in self.emails[folder]:
             shortUid = ""
             for j in range (0,min(len(i.uid), curses.tigetnum("cols") - len(i.sender + "\t" + i.subject + "\t"))):
                 shortUid += i.uid[j]
             print(i.sender + "\t" + i.subject + "\t" + shortUid)
-        print("="*curses.tigetnum("cols"))
+        try:
+            print("="*curses.tigetnum("cols"))
+        except:
+            print("="*80)
 
     def edit_email_in_folder(self, player_email, folder, uid):
         if folder == "sent":
@@ -69,11 +84,17 @@ class Email_Client():
         if folder == "inbox":
             print("You can't edit received emails!")
             return
-        curses.setupterm()
-        curses.update_lines_cols()
+        try:
+            curses.setupterm()
+            curses.update_lines_cols()
+        except:
+            ""
         if input("Are you sure you want to edit this email, saving the email will override all contents of the email. [y/n] ").lower() == "n":
             return
-        print("="*curses.tigetnum("cols"))
+        try:
+            print("="*curses.tigetnum("cols"))
+        except:
+            print("="*80)
         sender = player_email
         recipient = input("Recipient: ")
         print("Use ctrl+D to cancel.")
@@ -84,7 +105,10 @@ class Email_Client():
         print("Use ctrl+D to cancel.")
         print("Contents:")
         contents = multi_line_input()
-        print("="*curses.tigetnum("cols"))
+        try:
+            print("="*curses.tigetnum("cols"))
+        except:
+            print("="*80)
         if input("Are you sure you want to save this email, saving the email will override all contents of the email. [y/n] ").lower() == "n":
             return
         for i in self.emails[folder]:

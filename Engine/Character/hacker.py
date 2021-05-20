@@ -32,7 +32,7 @@ class Hacker:
     self.generate_first_name()
     self.surname = ""
     self.generate_surname()
-    self.email = self.first_name + self.surname + '@hackernation.onion'
+    self.email = self.first_name.lower() +"."+ self.surname.lower() + '@hackernation.onion'
     self.email_client = Email_Client()
     self.hackers_list = Hacker.all_hackers
 
@@ -67,7 +67,7 @@ class Hacker:
         if input("Read email by uid or by position? <u/p> ").lower() == "u":
           self.email_client.read_email_by_uid_in_folder(input("Folder: ").lower(), input("uid: ").lower())
         else:
-          self.email_client.read_email_by_pos_in_folder(input("Folder: ").lower(), input("uid: ").lower())
+          self.email_client.read_email_by_pos_in_folder(input("Folder: ").lower(), int(input("position: ").lower()))
       elif option == 4:
         self.email_client.print_folder(input("Folder: ").lower())
       elif option == 9:

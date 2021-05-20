@@ -1,4 +1,5 @@
 from .option import Option
+from CyberThreats.email_threat import *
 
 
 class Act1:
@@ -39,6 +40,8 @@ class Act1:
         self.hacker.check_emails()
         self.options.clear()
         looping = True
+      if "email" in self.chosen_option.option_descriptor:
+        self.hacker.email_client.send_email(Email_Threat(self.hacker.email,"foo.bar@onlook.com").get_email())
     print("You have chosen: " + self.chosen_option.option_descriptor)
     print(self.chosen_option.get_fun_fact())
     return
