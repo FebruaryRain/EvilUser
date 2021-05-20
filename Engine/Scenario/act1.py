@@ -33,6 +33,7 @@ class Act1:
     selection = self.request_input(len(self.options))
     self.chosen_option = self.options[selection-1]
     print("You have chosen: " + self.chosen_option.option_descriptor)
+    print(self.chosen_option.get_fun_fact())
     return
 
 
@@ -78,15 +79,18 @@ How do you want to gather information on your targets today?
       descriptor = "Check social media for common email address formats"
       actions_descriptor = "Combing through LinkedIn, a pattern to the standard emails of the organisation's employees is discovered. FirstName.LastName @organisation.co.uk is the ticket to the next step!"
       points = 10
-      install_malware_recce_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      install_malware_recce_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Check social media for supply chain partners to impersonate"
       actions_descriptor = "Sweeping eyes back and forth over news articles and organisation websites, a shortlist of partner companies is compiled, pathing the way to the back door!"
       points = 20
-      install_malware_recce_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      install_malware_recce_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Search for organisational information and charts"
       actions_descriptor = "Company websites are always keen to show off 'The Team' - today the team will be marionettes in a deception."
       points = 30
-      install_malware_recce_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      install_malware_recce_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_recce_option1)
       self.options.append(install_malware_recce_option2)
@@ -96,11 +100,13 @@ How do you want to gather information on your targets today?
       descriptor = "Gather information on a target from social media"
       actions_descriptor = "The target was keen to share their personal life on social media - now armed with a keener understanding of the target, the next phase can begin"
       points = 20
-      steal_card_details_recce_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      steal_card_details_recce_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Procure a large number of phone numbers from illicit vendor"
       actions_descriptor = "The dark web isn't as hard to get onto as people think, and a list of known good phone numbers to 'cold call' with a text costs less than one might think"
       points = 40
-      steal_card_details_recce_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      steal_card_details_recce_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(steal_card_details_recce_option1)
       self.options.append(steal_card_details_recce_option2)
@@ -109,15 +115,18 @@ How do you want to gather information on your targets today?
       descriptor = "Get number for internal offices"
       actions_descriptor = "Company websites are often poorly mapped and it's not difficult to root around and find other numbers than the customer service line with a little patience"
       points = 10
-      gain_payment_recce_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      gain_payment_recce_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Get internal phone extensions for those who make payments"
       actions_descriptor = "A little charm and a plausible scenario can get others to share extension numbers relatively easily."
       points = 20
-      gain_payment_recce_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      gain_payment_recce_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Find out who the bank regularly makes payments to"
       actions_descriptor = "Get in touch with the right people and they can reveal who the organisation regularly interacts with"
       points = 30
-      gain_payment_recce_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = "A fun fact!"
+      gain_payment_recce_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(gain_payment_recce_option1)
       self.options.append(gain_payment_recce_option2)

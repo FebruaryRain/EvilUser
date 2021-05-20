@@ -14,9 +14,9 @@ class Narrative_Builder:
 
   def pretty_print_narrative(self):
     summary = """
-     __            _    __   __              
-    /__/   //\\/\\  /_\\  / _\\ / _\\ \\\\// 
-    __/\\__//    \\/   \\/  \\ /  \\   //    
+     __                  _    __   __              
+    /__/   //\\/\\  /\\/\\  /_\\  / _\\ / _\\ \\\\// 
+    __/\\__//    \\/    \\/   \\/  \\ /  \\   //    
     """
 
     print(summary)
@@ -43,7 +43,7 @@ class Narrative_Builder:
     for option in self.options_list:
       print(option.get_actions_descriptor())
     print("")
-    print("And while they went, they scored" + " " + str(self.points) + " " + "- good job" + " " + self.hacker.get_full_name() + "!")
+    print("While they went, they scored" + " " + str(self.points) + " " + "- good job" + " " + self.hacker.get_full_name() + "!")
     return
 
 
@@ -53,7 +53,7 @@ class Narrative_Builder:
     print("")
     print("Yes, you." + " " + self.player.get_full_name() + "\n")
     print("")
-    print("Through this exercise, we hope you can see how a hacker operates; the techniques and tricks they use in order to gather information from seemingly innocuous sources")
+    print("Through this exercise, we hope you can see how a hacker operates; the techniques and tricks they use in order to gather information from seemingly innocuous sources, and chain these together to be able to later carry out an attack using a variety of methods.")
     print("Please see below, for examples of how the scenario the hacker," + " " + self.hacker.get_full_name() + ", " + "might have targetted you.")
     print("WIP: Add the examples of each stage below!")
     return

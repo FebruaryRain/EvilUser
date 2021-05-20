@@ -47,12 +47,6 @@ class Game:
     self.narrative =None
     self.scenario = None
 
-    # Sanity Checks
-    # alpha = self.player.get_full_name()
-    # print(alpha)
-    # print(self.player._forename)
-    # print(self.player.get_role())
-
     self.print_opening_splash()
     self.run_main_loop()
     return
@@ -67,7 +61,7 @@ class Game:
       # safety to escape an infinite loop
       if safety_catch == 0:
         self.b_playing = False
-        print("safety catch used!")
+        #print("safety catch used!")
       else:
         safety_catch +=1
 
@@ -81,12 +75,6 @@ class Game:
     self.scenario = Scenario.Scenario(self.hacker)
     self.scenario.generate_scenario()
     points_accrued = self.scenario.get_points_total()
-
-    #self.scenario.get_options_selected()
-    #for i in self.scenario.get_options_selected():
-    #  print(i.option_descriptor)
-    #  print(i.actions_descriptor)
-
 
     self.narrative = Narrative_Builder.Narrative_Builder(self.scenario.get_options_selected(), self.hacker, self.player, points_accrued)
     self.narrative.pretty_print_narrative()
@@ -185,8 +173,8 @@ We hope you have fun looking through the other side of the glass!
   def print_instructions(self):
     instructions = """
              __ ____ __       ____________        __       
-     / /\\  //__  /  / _\\/   //    /  / / _\\ /\\  //__   
-    / /  \\/ __/ /  / \\  \\__/ \\__ /__/__\\__//  \\/ __/ 
+     / /\\  //__  /  / _\\/   //    /  / /  \\ /\\  //__   
+    / /  \\/ __/ /  /  \\ \\__/ \\__ /__/__\\__//  \\/ __/ 
     """
     print(instructions)
 
@@ -196,11 +184,6 @@ In each section, you will choose the path that the hacker follows.
 A full narrative will be provided at the end for you to see!
 """)
     return
-
-
-#  def update_narrative(self):
-#    
-#    return
 
 
   def request_input(self, options_range):
