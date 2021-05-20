@@ -146,7 +146,6 @@ class Game:
 
 
   def print_title(self):
-    #print("Here's the place holder title!")
     big_splash = """
      __________       ___________ ___          
     /   _____/ \\     /  /__   __//  /         
@@ -198,9 +197,9 @@ A full narrative will be provided at the end for you to see!
     return
 
 
-  def update_narrative(self):
-    
-    return
+#  def update_narrative(self):
+#    
+#    return
 
 
   def request_input(self, options_range):
