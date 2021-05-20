@@ -29,7 +29,7 @@ class Scenario:
 
     self.create_full_narrative()
     self.calculate_total_points()
-    print(self.points_total)
+    #print(self.points_total)
     return
 
 

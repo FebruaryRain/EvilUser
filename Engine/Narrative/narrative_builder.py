@@ -43,7 +43,7 @@ class Narrative_Builder:
     for option in self.options_list:
       print(option.get_actions_descriptor())
     print("")
-    print("While they went, they scored" + " " + str(self.points) + " " + "- good job" + " " + self.hacker.get_full_name() + "!")
+    print("While they went, they scored" + " " + str(self.points) + " " + "points - good job" + " " + self.hacker.get_full_name() + "!")
     return
 
 
