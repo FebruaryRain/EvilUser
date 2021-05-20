@@ -30,6 +30,7 @@ class Email_Client():
 
     def compose_email(self, player_email):
         curses.setupterm()
+        curses.update_lines_cols()
         print("="*curses.tigetnum("cols"))
         sender = player_email
         recipient = input("Recipient: ")
@@ -49,6 +50,7 @@ class Email_Client():
         
     def print_folder(self, folder):
         curses.setupterm()
+        curses.update_lines_cols()
         print("="*curses.tigetnum("cols"))
         for i in self.emails[folder]:
             shortUid = ""
@@ -65,6 +67,7 @@ class Email_Client():
             print("You can't edit received emails!")
             return
         curses.setupterm()
+        curses.update_lines_cols()
         if input("Are you sure you want to edit this email, saving the email will override all contents of the email. [y/n] ").lower() == "n":
             return
         print("="*curses.tigetnum("cols"))
