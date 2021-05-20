@@ -120,10 +120,11 @@ Select how to gain this access below:
       self.options.append(install_malware_infil_option3)
 
     if self.hacker_objective == "gain_payment":
-      gain_payment_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      
       descriptor = "Email the person in charge of making payments to a supplier"
       actions_descriptor = "As long as I spell check and mention pertinent details to recent deals (I'm sure I can find something out online) then they might miss my slightly wrong email address!"
       points = 40
+      gain_payment_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
       descriptor = "Call the person in charge of making payments to a supplier"
       actions_descriptor = "OK, deep breath in, and out, now convince them you're not wearing sweats and a hoody "
       points = 50
