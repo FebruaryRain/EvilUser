@@ -14,10 +14,10 @@ class Narrative_Builder:
 
   def pretty_print_narrative(self):
     summary = """
- __            _    __   __              
-/__/   //\\/\\  /_\\  / _\\ / _\\ \\\\// 
-__/\\__//    \\/   \\/ \\  / \\    //    
-"""
+     __            _    __   __              
+    /__/   //\\/\\  /_\\  / _\\ / _\\ \\\\// 
+    __/\\__//    \\/   \\/  \\ /  \\   //    
+    """
 
     print(summary)
     print("")
@@ -31,6 +31,13 @@ __/\\__//    \\/   \\/ \\  / \\    //
         phase_name = "Exploitation"
       print("*** In the" + " " + phase_name + " " + "phase, the hacker," + " " + self.hacker.get_full_name() + ", " + "chose to:")
       print(option.get_option_descriptor())
+    story = """
+     __ ___ __   __          
+    /__  / /  \\ / _\\\\\\// 
+    __/ /  \\__//  \\  //    
+    """
+
+    print(story)
     print("")
     print("Throughout," + " " + self.hacker.get_full_name() + " " + "was thinking:")
     for option in self.options_list:

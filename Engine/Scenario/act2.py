@@ -84,16 +84,16 @@ Select how to gain this access below:
   def generate_options(self):
 
     if self.hacker_objective == "install_malware":
-      descriptor = "Send an email from an account with a similar email address to internal ones with a convincing dodgy link in the body"
-      actions_descriptor = "Rootkits are a classic and yet people always fall for them. Their mistake means I’m in charge of the system now!"
+      descriptor = "Customise an email from an account with a similar email address to internal ones with a convincing dodgy link in the body for specific persons"
+      actions_descriptor = "Take it one person at a time, really try and convince them this is something they want to look at..."
       points = 40
       install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
       descriptor = "Send an email from an account with an email that makes it look like a legitimate supplier sent it, with a virus attached in a file"
-      actions_descriptor = "Nice of them to label the ATM control system. Bit of manipulation and I can get any ATM to drop its cash into my hands!"
+      actions_descriptor = "So what if only one person actually checks the attachment, only one is needed..."
       points = 50
       install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
-      descriptor = "Send an email that is broadly generic to a generated list of names using the standard email format"
-      actions_descriptor = "Ha! Let’s see them try and be a bank when their systems are encrypted by me! Should be worth a couple of million to unblock this!"
+      descriptor = "Send an email that is broadly generic, to a generated list of names using the standard email format, with "
+      actions_descriptor = "More emails, more chances someone blindly opens the email and checks the links..."
       points = 60
       install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
 

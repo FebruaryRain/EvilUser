@@ -169,7 +169,7 @@ class Game:
     introduction = """
              ____ __  __   _       __ _________              
      / /\\  /  /  / _\\/  \\ / \\/   //    /  / /  \\ /\\  /   
-    / /  \\/  /  / \\  \\__//__/\\__/ \\__ /__/__\\__//  \\/   
+    / /  \\/  /  /  \\ \\__//__/\\__/ \\__ /__/__\\__//  \\/   
     """
     print(introduction)
 
@@ -185,7 +185,7 @@ We hope you have fun looking through the other side of the glass!
   def print_instructions(self):
     instructions = """
              __ ____ __       ____________        __       
-     / /\\  //__  /  / _\\/   //    /  / /  \\ /\\  //__   
+     / /\\  //__  /  / _\\/   //    /  / / _\\ /\\  //__   
     / /  \\/ __/ /  / \\  \\__/ \\__ /__/__\\__//  \\/ __/ 
     """
     print(instructions)
