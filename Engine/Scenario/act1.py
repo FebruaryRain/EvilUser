@@ -27,11 +27,18 @@ class Act1:
   def create_act(self):
     # Start Scenario
     self.select_scenario_description()
-    self.background_to_current_activity()
-    self.generate_options()
-    self.display_options_descriptions()
-    selection = self.request_input(len(self.options))
-    self.chosen_option = self.options[selection-1]
+    looping = True
+    while looping:
+      self.background_to_current_activity()
+      self.generate_options()
+      self.display_options_descriptions()
+      selection = self.request_input(len(self.options))
+      self.chosen_option = self.options[selection-1]
+      looping = False
+      if self.chosen_option.option_descriptor == "Check your emails":
+        self.hacker.check_emails()
+        self.options.clear()
+        looping = True
     print("You have chosen: " + self.chosen_option.option_descriptor)
     print(self.chosen_option.get_fun_fact())
     return
@@ -132,6 +139,7 @@ How do you want to gather information on your targets today?
       self.options.append(gain_payment_recce_option2)
       self.options.append(gain_payment_recce_option3)
 
+    self.options.append(Option(self.act_number, "Check your emails", ""))
     return
 
 

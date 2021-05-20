@@ -2,7 +2,7 @@
 
 class Option:
 
-  def __init__(self, act_number, option_descriptor, actions_descriptor, points, fun_fact = "Placeholder_fun_fact"):
+  def __init__(self, act_number, option_descriptor, actions_descriptor, points = 0, fun_fact = "Placeholder_fun_fact"):
     self.act = act_number
     self.option_descriptor = option_descriptor
     self.actions_descriptor = actions_descriptor

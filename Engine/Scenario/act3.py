@@ -27,11 +27,18 @@ class Act3:
   def create_act(self):
     # Start Scenario
     self.select_scenario_description()
-    self.background_to_current_activity()
-    self.generate_options()
-    self.display_options_descriptions()
-    selection = self.request_input(len(self.options))
-    self.chosen_option = self.options[selection-1]
+    looping = True
+    while looping:
+      self.background_to_current_activity()
+      self.generate_options()
+      self.display_options_descriptions()
+      selection = self.request_input(len(self.options))
+      self.chosen_option = self.options[selection-1]
+      looping = False
+      if self.chosen_option.option_descriptor == "Check your emails":
+        self.hacker.check_emails()
+        self.options.clear()
+        looping = True
     print("You have chosen: " + self.chosen_option.option_descriptor)
     return
 
@@ -144,6 +151,8 @@ What does the attack look like?
       self.options.append(gain_payment_exploit_option1)
       self.options.append(gain_payment_exploit_option2)
       self.options.append(gain_payment_exploit_option3)
+
+    self.options.append(Option(self.act_number, "Check your emails", ""))
 
     return
 

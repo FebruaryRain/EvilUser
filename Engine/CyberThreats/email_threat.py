@@ -1,3 +1,4 @@
+from Engine.Email.email import Email
 from .cyber_threat import *
 from .code_generator import *
 
@@ -27,3 +28,7 @@ class Text_Threat(Cyber_Threat):
             end = "bye replying to this email with the rekwired detales (name, phone number, address and email)"
         print(beginning + middle + end)
         return beginning + middle + end
+
+    def get_email(self):
+        email = Email(self.sender, self.reciever, self.contents, self.theme, [], ["*"])
+        return email
