@@ -81,6 +81,7 @@ class Game:
     
     self.scenario = Scenario.Scenario(self.hacker)
     self.scenario.generate_scenario()
+    points_accrued = self.scenario.get_points_total()
 
     #self.scenario.get_options_selected()
     #for i in self.scenario.get_options_selected():
@@ -88,7 +89,7 @@ class Game:
     #  print(i.actions_descriptor)
 
 
-    self.narrative = Narrative_Builder.Narrative_Builder(self.scenario.get_options_selected(), self.hacker, self.player)
+    self.narrative = Narrative_Builder.Narrative_Builder(self.scenario.get_options_selected(), self.hacker, self.player, points_accrued)
     self.narrative.pretty_print_narrative()
     self.narrative.print_ending()
     return

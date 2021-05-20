@@ -84,45 +84,55 @@ Select how to gain this access below:
   def generate_options(self):
 
     if self.hacker_objective == "install_malware":
-      descriptor = "Install rootkit and gain full admin access"
-      actions_descriptor = "Rootkits are a classic and yet people always fall for them. Their mistake means I’m in charge of the system now!"
-      install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Jackpot ATM"
-      actions_descriptor = "Nice of them to label the ATM control system. Bit of manipulation and I can get any ATM to drop its cash into my hands!"
-      install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Install Ransomware"
-      actions_descriptor = "Ha! Let’s see them try and be a bank when their systems are encrypted by me! Should be worth a couple of million to unblock this!"
-      install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Customise an email from an account with a similar email address to internal ones with a convincing dodgy link in the body for specific persons"
+      actions_descriptor = "Take it one person at a time, really try and convince them this is something they want to look at..."
+      points = 40
+      install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      descriptor = "Send an email from an account with an email that makes it look like a legitimate supplier sent it, with a virus attached in a file"
+      actions_descriptor = "So what if only one person actually checks the attachment, only one is needed..."
+      points = 50
+      install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      descriptor = "Send an email that is broadly generic, to a generated list of names using the standard email format, with "
+      actions_descriptor = "More emails, more chances someone blindly opens the email and checks the links..."
+      points = 60
+      install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
 
       self.options.append(install_malware_infil_option1)
       self.options.append(install_malware_infil_option2)
       self.options.append(install_malware_infil_option3)
 
     if self.hacker_objective == "steal_card_details":
-      descriptor = "Install a key logger"
-      actions_descriptor = "A nice little present to pick up all their key strokes. A bit of analysis and I’ll be able to see every single card and account number they enter!"
-      install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Send a spoofed email"
-      actions_descriptor = "If I ask for card details whilst pretending to be someone high up in the organisation, I bet they’ll respond with everything I ask for, especially if I turn up the heat!"
-      install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Fake a phone call"
-      actions_descriptor = "Fake the source number, a little bit of phone line interference, fake a bit of a cold, and demand some card details, and they’ll never know who they’re really talkingto!"
-      install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Craft a text to send with notice about a missed delivery"
+      actions_descriptor = "Everyone has been ordering online like crazy, this is sure to catch at least a few out!"
+      points = 40
+      install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      descriptor = "Craft a generic HMRC notice that they need to handle"
+      actions_descriptor = "Everyone hates taxes, so anything promising to give back their own money is sure to get a lot of hits!"
+      points = 50
+      install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      descriptor = "Send a text from a well-known charity asking for donations"
+      actions_descriptor = "Ha, this one is genius, if they fall for it then the expect the money to go out each month!"
+      points = 60
+      install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
 
       self.options.append(install_malware_infil_option1)
       self.options.append(install_malware_infil_option2)
       self.options.append(install_malware_infil_option3)
 
     if self.hacker_objective == "gain_payment":
-      descriptor = "Pretend to be a legitimate creditor"
-      actions_descriptor = "They often pay this company a large amount of money. Easy enough to fake a call or email and demand a late payment. Threaten lawyers to grease-the-wheels!"
-      gain_payment_infil_option1 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Provide alternative bank details"
-      actions_descriptor = "Easy enough to convince them that a supplier has changed bank details, a bit of fast-talking and before they know it, they’re paying me instead!"
-      gain_payment_infil_option2 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "set up fake transactions"
-      actions_descriptor = "Lots of little transactions to an account I control should net me a good amount. If I keep them small but frequent, it’ll be months before they notice!"
-      gain_payment_infil_option3 = Option(self.act_number, descriptor, actions_descriptor)
+      
+      descriptor = "Email the person in charge of making payments to a supplier"
+      actions_descriptor = "As long as I spell check and mention pertinent details to recent deals (I'm sure I can find something out online) then they might miss my slightly wrong email address!"
+      points = 40
+      gain_payment_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      descriptor = "Call the person in charge of making payments to a supplier"
+      actions_descriptor = "OK, deep breath in, and out, now convince them you're not wearing sweats and a hoody "
+      points = 50
+      gain_payment_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      descriptor = "Call a system administrator"
+      actions_descriptor = "If they think they're talking to an internal person, they migt be willing to set up the payments to get around a bug I report - diabolical!"
+      points = 60
+      gain_payment_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
 
       self.options.append(gain_payment_infil_option1)
       self.options.append(gain_payment_infil_option2)

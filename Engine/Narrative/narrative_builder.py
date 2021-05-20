@@ -3,15 +3,23 @@
 class Narrative_Builder:
 
 
-  def __init__(self, options_list, hacker, player):
+  def __init__(self, options_list, hacker, player, points_at_end):
     self.options_list = options_list
     self.hacker = hacker
     self.player = player
+    self.points = points_at_end
 
     return
 
 
   def pretty_print_narrative(self):
+    summary = """
+     __            _    __   __              
+    /__/   //\\/\\  /_\\  / _\\ / _\\ \\\\// 
+    __/\\__//    \\/   \\/  \\ /  \\   //    
+    """
+
+    print(summary)
     print("")
     for option in self.options_list:
       phase_name = ""
@@ -23,10 +31,19 @@ class Narrative_Builder:
         phase_name = "Exploitation"
       print("*** In the" + " " + phase_name + " " + "phase, the hacker," + " " + self.hacker.get_full_name() + ", " + "chose to:")
       print(option.get_option_descriptor())
+    story = """
+     __ ___ __   __          
+    /__  / /  \\ / _\\\\\\// 
+    __/ /  \\__//  \\  //    
+    """
+
+    print(story)
     print("")
     print("Throughout," + " " + self.hacker.get_full_name() + " " + "was thinking:")
     for option in self.options_list:
       print(option.get_actions_descriptor())
+    print("")
+    print("And while they went, they scored" + " " + str(self.points) + " " + "- good job" + " " + self.hacker.get_full_name() + "!")
     return
 
 
