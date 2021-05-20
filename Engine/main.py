@@ -85,7 +85,7 @@ class Game:
 
   def ask_for_hacker_selection(self):
     self.print_numbered_options_in_iterable(self.hacker.get_applicable_hackers(), "actor_type")
-    print(len(self.hacker.get_applicable_hackers()))
+    #print(len(self.hacker.get_applicable_hackers()))
     response = self.request_input(len(self.hacker.get_applicable_hackers()))
     print(response)
     self.hacker.set_chosen_hacker_info(self.hacker.get_applicable_hackers()[response-1])
