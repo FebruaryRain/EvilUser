@@ -42,7 +42,8 @@ class Game:
                                   input("What is your email? "), 
                                   input("What is your role? "), 
                                   input("What is your employee id? "), 
-                                  input("Is your role customer facing? ")
+                                  #input("Is your role customer facing? ")
+                                  self.get_yn_input(input("Is your role customer facing? "))
                                   )
     self.hacker = None
     self.narrative =None
@@ -208,6 +209,12 @@ A full narrative will be provided at the end for you to see!
           print("Please ensure that your input is a specified number!")
 
     return selection
+
+  def get_yn_input(self, answer):
+    if "y" in answer or "Y" in answer:
+      return True
+    else:
+      return False
 
 
 if __name__ == "__main__":

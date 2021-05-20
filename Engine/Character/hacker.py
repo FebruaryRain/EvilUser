@@ -7,7 +7,7 @@ class Hacker:
   # BOH = Back Of House (non-Customer Facing)
 
 # True and False for FOH and BOH is arbitrary to aid in ensuring that values all pass correctly at a later date, only for use during testing
-  phishing_hacker = {"actor_type": "smish_hacker", 
+  phishing_hacker = {"actor_type": "phish_hacker", 
                   "objectives": "install_malware",
                   "for_FOH": True,
                   "for_BOH": True
