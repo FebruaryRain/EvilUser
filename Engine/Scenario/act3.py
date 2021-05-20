@@ -93,15 +93,18 @@ What does the attack look like?
       descriptor = "Install rootkit and gain full admin access"
       actions_descriptor = "Rootkits are a classic and yet people always fall for them. Their mistake means I’m in charge of the system now!"
       points = 40
-      install_malware_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      install_malware_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Jackpot ATM"
       actions_descriptor = "Nice of them to label the ATM control system. Bit of manipulation and I can get any ATM to drop its cash into my hands!"
       points = 50
-      install_malware_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      install_malware_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Install Ransomware"
       actions_descriptor = "Ha! Let’s see them try and be a bank when their systems are encrypted by me! Should be worth a couple of million to unblock this!"
       points = 60
-      install_malware_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      install_malware_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_exploit_option1)
       self.options.append(install_malware_exploit_option2)
@@ -111,15 +114,18 @@ What does the attack look like?
       descriptor = "Fake a phone call"
       actions_descriptor = "Fake the source number, a little bit of phone line interference, fake a bit of a cold, and demand some card details, and they’ll never know who they’re really talking to!"
       points = 40
-      install_malware_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      install_malware_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Send a spoofed email"
       actions_descriptor = "If I ask for card details whilst pretending to be someone high up in the organisation, I bet they’ll respond with everything I ask for, especially if I turn up the heat!"
       points = 50
-      install_malware_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      install_malware_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Install a key logger"
       actions_descriptor = "A nice little present to pick up all their key strokes. A bit of analysis and I’ll be able to see every single card and account number they enter!"
       points = 60
-      install_malware_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      install_malware_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_exploit_option1)
       self.options.append(install_malware_exploit_option2)
@@ -129,15 +135,18 @@ What does the attack look like?
       descriptor = "Provide alternative bank details"
       actions_descriptor = "Easy enough to convince them that a supplier has changed bank details, a bit of fast-talking and before they know it, they’re paying me instead!"
       points = 40
-      gain_payment_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      gain_payment_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Pretend to be a legitimate creditor"
       actions_descriptor = "They often pay this company a large amount of money. Easy enough to fake a call or email and demand a late payment. Threaten lawyers to grease-the-wheels!"
       points = 50
-      gain_payment_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      gain_payment_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "set up fake transactions"
       actions_descriptor = "Lots of little transactions to an account I control should net me a good amount. If I keep them small but frequent, it’ll be months before they notice!"
       points = 60
-      gain_payment_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points)
+      fun_fact = ""
+      gain_payment_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(gain_payment_exploit_option1)
       self.options.append(gain_payment_exploit_option2)
