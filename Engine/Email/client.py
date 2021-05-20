@@ -1,7 +1,6 @@
-from Engine.Utils.multi_line_input import multi_line_input
 from .email import Email
 import curses
-from ..Utils.multi_line_input import *
+from Utils.multi_line_input import *
 class Email_Client():
     emails = {
         "inbox":[],
@@ -49,6 +48,10 @@ class Email_Client():
             self.emails["drafts"].append(Email(sender, recipient, contents, subject, cc.splitlines(), bcc.splitlines()))
         
     def print_folder(self, folder):
+        folders = list(self.emails)
+        if folder not in folders:
+            print(folder + " is not a folder")
+            return
         curses.setupterm()
         curses.update_lines_cols()
         print("="*curses.tigetnum("cols"))

@@ -1,5 +1,5 @@
 from email.utils import parseaddr
-from ..Utils.email_validator import validate_email
+from Utils.email_validator import validate_email
 import curses
 import hashlib
 

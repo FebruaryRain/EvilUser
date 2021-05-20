@@ -1,4 +1,5 @@
 import random
+from Email.client import Email_Client
 
 class Hacker:
 
@@ -31,6 +32,8 @@ class Hacker:
     self.generate_first_name()
     self.surname = ""
     self.generate_surname()
+    self.email = self.first_name + self.surname + '@hackernation.onion'
+    self.email_client = Email_Client()
     self.hackers_list = Hacker.all_hackers
 
     # Sanity Checks
@@ -41,6 +44,35 @@ class Hacker:
 
     return
 
+  def check_emails(self):
+    checking_emails = True
+    while checking_emails:
+      print("""
+            1) Check inbox
+            2) Check sent box
+            3) Read an email
+            4) Check a folder
+            9) Stop checking emails
+            """)
+      try:
+        option = int(input("Choose an option: "))
+      except TypeError:
+        print("Invalid option, please enter a number")
+        continue
+      if option == 1:
+        self.email_client.print_inbox()
+      elif option == 2:
+        self.email_client.print_sent_box()
+      elif option == 3:
+        if input("Read email by uid or by position? <u/p> ").lower() == "u":
+          self.email_client.read_email_by_uid_in_folder(input("Folder: ").lower(), input("uid: ").lower())
+        else:
+          self.email_client.read_email_by_pos_in_folder(input("Folder: ").lower(), input("uid: ").lower())
+      elif option == 4:
+        self.email_client.print_folder(input("Folder: ").lower())
+      elif option == 9:
+        checking_emails = False
+      
 
   def generate_first_name(self):
     first_name_list = ["Sandra","Victor","Michael","Anna","Brian","Belle","Shelley","William"]

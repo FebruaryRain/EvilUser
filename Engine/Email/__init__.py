@@ -1,1 +1,1 @@
-from .email import Email_Client
+from .client import Email_Client
