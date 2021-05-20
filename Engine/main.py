@@ -4,6 +4,7 @@ from Narrative import narrative_builder as Narrative_Builder
 from Scenario import scenario as Scenario
 
 import sys
+import distutils.util as util
 
 
 class Game:
@@ -146,18 +147,18 @@ class Game:
 
 
   def print_title(self):
-    big_splash = """
+    big_splash = r"""
      __________       ___________ ___          
-    /   _____/ \\     /  /__   __//  /         
-   /   /___  \\  \\   /  /  /  /  /  /         
-  /   ____/   \\  \\_/  /  /  /  /  /          
- /   /___      \\     /__/  /__/  /____        
-/_______/___    \\___/________/_______/_____   
-       /   /   /   /   _____/   ____/      \\  
+    /   _____/ \     /  /__   __//  /         
+   /   /___  \  \   /  /  /  /  /  /         
+  /   ____/   \  \_/  /  /  /  /  /          
+ /   /___      \     /__/  /__/  /____        
+/_______/___    \___/________/_______/_____   
+       /   /   /   /   _____/   ____/      \  
       /   /   /   /   /____/   /___/    ___/   
-     /   /   /   /____    /   ____/     \\     
-    /    \\__/   /____/   /   /___/   /\\  \\  
-    \\__________/________/_______/___/  \\__\\ 
+     /   /   /   /____    /   ____/     \     
+    /    \__/   /____/   /   /___/   /\  \  
+    \__________/________/_______/___/  \__\ 
 """
     print(big_splash)
     return
@@ -165,10 +166,10 @@ class Game:
 
   def print_introduction(self):
 
-    introduction = """
+    introduction = r"""
              ____ __  __   _       __ _________              
-     / /\\  /  /  / _\\/  \\ / \\/   //    /  / /  \\ /\\  /   
-    / /  \\/  /  / \\  \\__//__/\\__/ \\__ /__/__\\__//  \\/   
+     / /\  /  /  / _\/  \ / \/   //    /  / /  \ /\  /   
+    / /  \/  /  / \  \__//__/\__/ \__ /__/__\__//  \/   
     """
     print(introduction)
 
@@ -182,10 +183,10 @@ We hope you have fun looking through the other side of the glass!
 
 
   def print_instructions(self):
-    instructions = """
+    instructions = r"""
              __ ____ __       ____________        __       
-     / /\\  //__  /  / _\\/   //    /  / /  \\ /\\  //__   
-    / /  \\/ __/ /  / \\  \\__/ \\__ /__/__\\__//  \\/ __/ 
+     / /\  //__  /  / _\/   //    /  / /  \ /\  //__   
+    / /  \/ __/ /  / \  \__/ \__ /__/__\__//  \/ __/ 
     """
     print(instructions)
 
@@ -228,5 +229,5 @@ A full narrative will be provided at the end for you to see!
 if __name__ == "__main__":
   demo = False
   if len(sys.argv) > 1:
-    demo = sys.argv[1]
+    demo = util.strtobool(sys.argv[1])
   game = Game(demo)
