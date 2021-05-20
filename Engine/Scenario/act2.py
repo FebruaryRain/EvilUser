@@ -27,12 +27,24 @@ class Act2:
   def create_act(self):
     # Start Scenario
     self.select_scenario_description()
+    self.background_to_current_activity()
     self.generate_options()
     self.display_options_descriptions()
     selection = self.request_input(len(self.options))
     self.chosen_option = self.options[selection-1]
     print("You have chosen: " + self.chosen_option.option_descriptor)
     return
+
+
+#  def create_act(self):
+#    # Start Scenario
+#    self.select_scenario_description()
+#    self.generate_options()
+#    self.display_options_descriptions()
+#    selection = self.request_input(len(self.options))
+#    self.chosen_option = self.options[selection-1]
+#    print("You have chosen: " + self.chosen_option.option_descriptor)
+#    return
 
 
   def display_options_descriptions(self):
@@ -57,58 +69,64 @@ class Act2:
     return
 
 
-  def give_background_to_current_activity(self):
+  def background_to_current_activity(self):
     background_blurb = """
-The first act of any hacker is to carry out recconnaissance on your given target.
-This can be passive, looking at social media like Facebook and LinkedIn; or googling public information on an organisation (for example, Companies House). 
-This is done so that you can better target your approach, such as when an individual's birthday is, or finding out what an organisation's standard format for an email address is. 
-How do you want to gather information on your targets today?
+Once information has been collected on a target, person or organisation, the next step is to "Infiltrate" in some manner. 
+This can include a wide array of techniques, depending on the goal and type of target. 
+The ultimate aim here is to gain (greater) access to later exploit in order to carry out the attack and complete the goal.
+
+Select how to gain this access below:
     """
-    return background_blurb
+    print(background_blurb)
+    return
 
 
   def generate_options(self):
 
     if self.hacker_objective == "install_malware":
-      descriptor = "Check social media for common email address formats"
-      actions_descriptor = "Combing through LinkedIn, a pattern to the standard emails of the organisation's employees is discovered. FirstName.LastName @organisation.co.uk is the ticket to the next step!"
-      install_malware_recce_option1 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Check social media for supply chain partners to impersonate"
-      actions_descriptor = "Sweeping eyes back and forth over news articles and organisation websites, a shortlist of partner companies is compiled, pathing the way to the back door!"
-      install_malware_recce_option2 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Search for organisational information and charts"
-      actions_descriptor = "Company websites are always keen to show off 'The Team' - today the team will be marionettes in a deception."
-      install_malware_recce_option3 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Install rootkit and gain full admin access"
+      actions_descriptor = "Rootkits are a classic and yet people always fall for them. Their mistake means I’m in charge of the system now!"
+      install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Jackpot ATM"
+      actions_descriptor = "Nice of them to label the ATM control system. Bit of manipulation and I can get any ATM to drop its cash into my hands!"
+      install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Install Ransomware"
+      actions_descriptor = "Ha! Let’s see them try and be a bank when their systems are encrypted by me! Should be worth a couple of million to unblock this!"
+      install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor)
 
-      self.options.append(install_malware_recce_option1)
-      self.options.append(install_malware_recce_option2)
-      self.options.append(install_malware_recce_option3)
+      self.options.append(install_malware_infil_option1)
+      self.options.append(install_malware_infil_option2)
+      self.options.append(install_malware_infil_option3)
 
     if self.hacker_objective == "steal_card_details":
-      descriptor = "Gather information on a target from social media"
-      actions_descriptor = "The target was keen to share their personal life on social media - now armed with a keener understanding of the target, the next phase can begin"
-      steal_card_details_recce_option1 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Procure a large number of phone numbers from illicit vendor"
-      actions_descriptor = "The dark web isn't as hard to get onto as people think, and a list of known good phone numbers to 'cold call' with a text costs less than one might think"
-      steal_card_details_recce_option2 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Install a key logger"
+      actions_descriptor = "A nice little present to pick up all their key strokes. A bit of analysis and I’ll be able to see every single card and account number they enter!"
+      install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Send a spoofed email"
+      actions_descriptor = "If I ask for card details whilst pretending to be someone high up in the organisation, I bet they’ll respond with everything I ask for, especially if I turn up the heat!"
+      install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Fake a phone call"
+      actions_descriptor = "Fake the source number, a little bit of phone line interference, fake a bit of a cold, and demand some card details, and they’ll never know who they’re really talkingto!"
+      install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor)
 
-      self.options.append(steal_card_details_recce_option1)
-      self.options.append(steal_card_details_recce_option2)
+      self.options.append(install_malware_infil_option1)
+      self.options.append(install_malware_infil_option2)
+      self.options.append(install_malware_infil_option3)
 
     if self.hacker_objective == "gain_payment":
-      descriptor = "Get number for internal offices"
-      actions_descriptor = "Company websites are often poorly mapped and it's not difficult to root around and find other numbers than the customer service line with a little patience"
-      gain_payment_recce_option1 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Get internal phone extensions for those who make payments"
-      actions_descriptor = "A little charm and a plausible scenario can get others to share extension numbers relatively easily."
-      gain_payment_recce_option2 = Option(self.act_number, descriptor, actions_descriptor)
-      descriptor = "Find out who the bank regularly makes payments to"
-      actions_descriptor = "Get in touch with the right people and they can reveal who the organisation regularly interacts with"
-      gain_payment_recce_option3 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Pretend to be a legitimate creditor"
+      actions_descriptor = "They often pay this company a large amount of money. Easy enough to fake a call or email and demand a late payment. Threaten lawyers to grease-the-wheels!"
+      gain_payment_infil_option1 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "Provide alternative bank details"
+      actions_descriptor = "Easy enough to convince them that a supplier has changed bank details, a bit of fast-talking and before they know it, they’re paying me instead!"
+      gain_payment_infil_option2 = Option(self.act_number, descriptor, actions_descriptor)
+      descriptor = "set up fake transactions"
+      actions_descriptor = "Lots of little transactions to an account I control should net me a good amount. If I keep them small but frequent, it’ll be months before they notice!"
+      gain_payment_infil_option3 = Option(self.act_number, descriptor, actions_descriptor)
 
-      self.options.append(gain_payment_recce_option1)
-      self.options.append(gain_payment_recce_option2)
-      self.options.append(gain_payment_recce_option3)
+      self.options.append(gain_payment_infil_option1)
+      self.options.append(gain_payment_infil_option2)
+      self.options.append(gain_payment_infil_option3)
 
     return
 

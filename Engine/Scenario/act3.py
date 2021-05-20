@@ -27,12 +27,24 @@ class Act3:
   def create_act(self):
     # Start Scenario
     self.select_scenario_description()
+    self.background_to_current_activity()
     self.generate_options()
     self.display_options_descriptions()
     selection = self.request_input(len(self.options))
     self.chosen_option = self.options[selection-1]
     print("You have chosen: " + self.chosen_option.option_descriptor)
     return
+
+
+  # def create_act(self):
+  #   # Start Scenario
+  #   self.select_scenario_description()
+  #   self.generate_options()
+  #   self.display_options_descriptions()
+  #   selection = self.request_input(len(self.options))
+  #   self.chosen_option = self.options[selection-1]
+  #   print("You have chosen: " + self.chosen_option.option_descriptor)
+  #   return
 
 
   def display_options_descriptions(self):
@@ -57,14 +69,15 @@ class Act3:
     return
 
 
-  def give_background_to_current_activity(self):
+  def background_to_current_activity(self):
     background_blurb = """
-The first act of any hacker is to carry out recconnaissance on your given target.
-This can be passive, looking at social media like Facebook and LinkedIn; or googling public information on an organisation (for example, Companies House). 
-This is done so that you can better target your approach, such as when an individual's birthday is, or finding out what an organisation's standard format for an email address is. 
-How do you want to gather information on your targets today?
+Once access is gained, the time to strike is ripe.
+In the attack, there is always a a risk of things not working quite right but seeking reward brings risk - for both parties.
+
+What does the attack look like?
     """
-    return background_blurb
+    print(background_blurb)
+    return
 
 
   def generate_options(self):

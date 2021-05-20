@@ -95,21 +95,8 @@ class Game:
 
   def ask_for_hacker_selection(self):
     self.print_numbered_options_in_iterable(self.hacker.get_applicable_hackers(), "actor_type")
-    #b_seeking_input = True
-    #while b_seeking_input:
-    #response = None
-    #try:
     print(len(self.hacker.get_applicable_hackers()))
     response = self.request_input(len(self.hacker.get_applicable_hackers()))
-    #if response <= len(self.hacker.get_applicable_hackers()) and response != 0:
-    #  b_seeking_input = False
-    #else:
-    #  print("Please ensure that your input is a specified number!")
-    #except: 
-    #  print("Please ensure that your input is a specified number!")
-      #print("Unknown Error!")
-      
-    #print(self.hacker.get_applicable_hackers()[response-1])
     print(response)
     self.hacker.set_chosen_hacker_info(self.hacker.get_applicable_hackers()[response-1])
     return
@@ -159,7 +146,6 @@ class Game:
 
 
   def print_title(self):
-    #print("Here's the place holder title!")
     big_splash = """
      __________       ___________ ___          
     /   _____/ \\     /  /__   __//  /         
@@ -178,18 +164,42 @@ class Game:
 
 
   def print_introduction(self):
-    print("This is where the introduction text will be!")
+
+    introduction = """
+             ____ __  __   _       __ _________              
+     / /\\  /  /  / _\\/  \\ / \\/   //    /  / /  \\ /\\  /   
+    / /  \\/  /  / \\  \\__//__/\\__/ \\__ /__/__\\__//  \\/   
+    """
+    print(introduction)
+
+    print("""
+Today, you will inhabit the role of the malicious attacker seeking to bring damage to LBG.
+In the below scenario, you will take on the role of such a person and role play the steps that they would take in order to gain a deeper understanding of how these attacks are executed.
+We hope you have fun looking through the other side of the glass!
+""")
+
     return
 
 
   def print_instructions(self):
-    print("This is where the instructions will be!")
+    instructions = """
+             __ ____ __       ____________        __       
+     / /\\  //__  /  / _\\/   //    /  / /  \\ /\\  //__   
+    / /  \\/ __/ /  / \\  \\__/ \\__ /__/__\\__//  \\/ __/ 
+    """
+    print(instructions)
+
+    print("""
+Through this game, you will be presented with a series of multiple choice scenario sections. 
+In each section, you will choose the path that the hacker follows. 
+A full narrative will be provided at the end for you to see!
+""")
     return
 
 
-  def update_narrative(self):
-    
-    return
+#  def update_narrative(self):
+#    
+#    return
 
 
   def request_input(self, options_range):
