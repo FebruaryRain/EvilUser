@@ -165,12 +165,21 @@ class Game:
 
 
   def print_introduction(self):
-    print("This is where the introduction text will be!")
+    print("""
+Today, you will inhabit the role of the malicious attacker seeking to bring damage to LBG.
+In the below scenario, you will take on the role of such a person and role play the steps that they would take in order to gain a deeper understanding of how these attacks are executed.
+We hope you have fun looking through the other side of the glass!
+""")
+
     return
 
 
   def print_instructions(self):
-    print("This is where the instructions will be!")
+    print("""
+Through this game, you will be presented with a series of multiple choice scenario sections. 
+In each section, you will choose the path that the hacker follows. 
+A full narrative will be provided at the end for you to see!
+""")
     return
 
 
