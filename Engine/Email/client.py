@@ -69,8 +69,12 @@ class Email_Client():
             print(("="*80))
         for i in self.emails[folder]:
             shortUid = ""
-            for j in range (0,min(len(i.uid), curses.tigetnum("cols") - len(i.sender + "\t" + i.subject + "\t"))):
-                shortUid += i.uid[j]
+            try:
+                for j in range (0,min(len(i.uid), curses.tigetnum("cols") - len(i.sender + "\t" + i.subject + "\t"))):
+                    shortUid += i.uid[j]
+            except:
+                for j in range(0, min(len(i.uid), 80 - len(i.sender + "\t" + i.subject + "\t"))):
+                    shortUid += i.uid[j]
             print(i.sender + "\t" + i.subject + "\t" + shortUid)
         try:
             print("="*curses.tigetnum("cols"))
