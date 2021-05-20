@@ -165,6 +165,14 @@ class Game:
 
 
   def print_introduction(self):
+
+    introduction = """
+             ____ __  __   _       __ _________              
+     / /\\  /  /  / _\\/  \\ / \\/   //    /  / /  \\ /\\  /   
+    / /  \\/  /  / \\  \\__//__/\\__/ \\__ /__/__\\__//  \\/   
+    """
+    print(introduction)
+
     print("""
 Today, you will inhabit the role of the malicious attacker seeking to bring damage to LBG.
 In the below scenario, you will take on the role of such a person and role play the steps that they would take in order to gain a deeper understanding of how these attacks are executed.
@@ -175,6 +183,13 @@ We hope you have fun looking through the other side of the glass!
 
 
   def print_instructions(self):
+    instructions = """
+             __ ____ __       ____________        __       
+     / /\\  //__  /  / _\\/   //    /  / /  \\ /\\  //__   
+    / /  \\/ __/ /  / \\  \\__/ \\__ /__/__\\__//  \\/ __/ 
+    """
+    print(instructions)
+
     print("""
 Through this game, you will be presented with a series of multiple choice scenario sections. 
 In each section, you will choose the path that the hacker follows. 
