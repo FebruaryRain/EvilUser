@@ -27,6 +27,7 @@ class Act1:
   def create_act(self):
     # Start Scenario
     self.select_scenario_description()
+    self.background_to_current_activity()
     self.generate_options()
     self.display_options_descriptions()
     selection = self.request_input(len(self.options))
@@ -57,14 +58,18 @@ class Act1:
     return
 
 
-  def give_background_to_current_activity(self):
+  def background_to_current_activity(self):
     background_blurb = """
 The first act of any hacker is to carry out recconnaissance on your given target.
 This can be passive, looking at social media like Facebook and LinkedIn; or googling public information on an organisation (for example, Companies House). 
-This is done so that you can better target your approach, such as when an individual's birthday is, or finding out what an organisation's standard format for an email address is. 
+This is done so that you can better target your approach, such as when an individual's birthday is, or finding out an organisation's standard format for an email address. 
+"""
+    x = self.get_narrative_description() + "\n"
+    y = """
 How do you want to gather information on your targets today?
     """
-    return background_blurb
+    print(x + background_blurb + y)
+    return
 
 
   def generate_options(self):

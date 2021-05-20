@@ -27,12 +27,24 @@ class Act2:
   def create_act(self):
     # Start Scenario
     self.select_scenario_description()
+    self.background_to_current_activity()
     self.generate_options()
     self.display_options_descriptions()
     selection = self.request_input(len(self.options))
     self.chosen_option = self.options[selection-1]
     print("You have chosen: " + self.chosen_option.option_descriptor)
     return
+
+
+#  def create_act(self):
+#    # Start Scenario
+#    self.select_scenario_description()
+#    self.generate_options()
+#    self.display_options_descriptions()
+#    selection = self.request_input(len(self.options))
+#    self.chosen_option = self.options[selection-1]
+#    print("You have chosen: " + self.chosen_option.option_descriptor)
+#    return
 
 
   def display_options_descriptions(self):
@@ -57,14 +69,16 @@ class Act2:
     return
 
 
-  def give_background_to_current_activity(self):
+  def background_to_current_activity(self):
     background_blurb = """
-The first act of any hacker is to carry out recconnaissance on your given target.
-This can be passive, looking at social media like Facebook and LinkedIn; or googling public information on an organisation (for example, Companies House). 
-This is done so that you can better target your approach, such as when an individual's birthday is, or finding out what an organisation's standard format for an email address is. 
-How do you want to gather information on your targets today?
+Once information has been collected on a target, person or organisation, the next step is to "Infiltrate" in some manner. 
+This can include a wide array of techniques, depending on the goal and type of target. 
+The ultimate aim here is to gain (greater) access to later exploit in order to carry out the attack and complete the goal.
+
+Select how to gain this access below:
     """
-    return background_blurb
+    print(background_blurb)
+    return
 
 
   def generate_options(self):
