@@ -95,21 +95,8 @@ class Game:
 
   def ask_for_hacker_selection(self):
     self.print_numbered_options_in_iterable(self.hacker.get_applicable_hackers(), "actor_type")
-    #b_seeking_input = True
-    #while b_seeking_input:
-    #response = None
-    #try:
     print(len(self.hacker.get_applicable_hackers()))
     response = self.request_input(len(self.hacker.get_applicable_hackers()))
-    #if response <= len(self.hacker.get_applicable_hackers()) and response != 0:
-    #  b_seeking_input = False
-    #else:
-    #  print("Please ensure that your input is a specified number!")
-    #except: 
-    #  print("Please ensure that your input is a specified number!")
-      #print("Unknown Error!")
-      
-    #print(self.hacker.get_applicable_hackers()[response-1])
     print(response)
     self.hacker.set_chosen_hacker_info(self.hacker.get_applicable_hackers()[response-1])
     return
