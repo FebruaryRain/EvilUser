@@ -97,17 +97,17 @@ Select how to gain this access below:
       descriptor = "Customise an email from an account with a similar email address to internal ones with a convincing dodgy link in the body for specific persons"
       actions_descriptor = "Take it one person at a time, really try and convince them this is something they want to look at..."
       points = 40
-      fun_fact = ""
+      fun_fact = "3 million suspicious email are sent to LBG each month19.8" + '%' + " of employees click phishin email links"
       install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Send an email from an account with an email that makes it look like a legitimate supplier sent it, with a virus attached in a file"
       actions_descriptor = "So what if only one person actually checks the attachment, only one is needed..."
       points = 50
-      fun_fact = ""
+      fun_fact = "3 million suspicious email are sent to LBG each month19.8" + '%' + " of employees click phishin email links"
       install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Send an email that is broadly generic, to a generated list of names using the standard email format, with "
       actions_descriptor = "More emails, more chances someone blindly opens the email and checks the links..."
       points = 60
-      fun_fact = ""
+      fun_fact = "3 million suspicious email are sent to LBG each month19.8" + '%' + " of employees click phishin email links"
       install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_infil_option1)
@@ -118,17 +118,17 @@ Select how to gain this access below:
       descriptor = "Craft a text to send with notice about a missed delivery"
       actions_descriptor = "Everyone has been ordering online like crazy, this is sure to catch at least a few out!"
       points = 40
-      fun_fact = ""
+      fun_fact = "Between June 2020 and Jan 2021 it reaction fraud the uks national reporting centre received 2867 crime reports mentioning DPD and victims losing 3.4m  533 fake DPD texts/emails a day were sent to their suspicious reporting service."
       install_malware_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Craft a generic HMRC notice that they need to handle"
       actions_descriptor = "Everyone hates taxes, so anything promising to give back their own money is sure to get a lot of hits!"
       points = 50
-      fun_fact = ""
+      fun_fact = "Between June 2020 and Jan 2021 it reaction fraud the uks national reporting centre received 2867 crime reports mentioning DPD and victims losing 3.4m  533 fake DPD texts/emails a day were sent to their suspicious reporting service."
       install_malware_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Send a text from a well-known charity asking for donations"
       actions_descriptor = "Ha, this one is genius, if they fall for it then the expect the money to go out each month!"
       points = 60
-      fun_fact = ""
+      fun_fact = "Between June 2020 and Jan 2021 it reaction fraud the uks national reporting centre received 2867 crime reports mentioning DPD and victims losing 3.4m  533 fake DPD texts/emails a day were sent to their suspicious reporting service."
       install_malware_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_infil_option1)
@@ -140,17 +140,17 @@ Select how to gain this access below:
       descriptor = "Email the person in charge of making payments to a supplier"
       actions_descriptor = "As long as I spell check and mention pertinent details to recent deals (I'm sure I can find something out online) then they might miss my slightly wrong email address!"
       points = 40
-      fun_fact = ""
+      fun_fact = "44" + '%' + " of UK consumers claim they will stop spending with a business temporarily after a security breach, and 41" + '%' + " claim they will never return to a business post breach "
       gain_payment_infil_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Call the person in charge of making payments to a supplier"
       actions_descriptor = "OK, deep breath in, and out, now convince them you're not wearing sweats and a hoody "
       points = 50
-      fun_fact = ""
+      fun_fact = "44" + '%' + " of UK consumers claim they will stop spending with a business temporarily after a security breach, and 41" + '%' + " claim they will never return to a business post breach "
       gain_payment_infil_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Call a system administrator"
       actions_descriptor = "If they think they're talking to an internal person, they migt be willing to set up the payments to get around a bug I report - diabolical!"
       points = 60
-      fun_fact = ""
+      fun_fact = "44" + '%' + " of UK consumers claim they will stop spending with a business temporarily after a security breach, and 41" + '%' + " claim they will never return to a business post breach "
       gain_payment_infil_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(gain_payment_infil_option1)

@@ -93,17 +93,17 @@ What does the attack look like?
       descriptor = "Install rootkit and gain full admin access"
       actions_descriptor = "Rootkits are a classic and yet people always fall for them. Their mistake means I’m in charge of the system now!"
       points = 40
-      fun_fact = ""
+      fun_fact = "A fun fact! \n"
       install_malware_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Jackpot ATM"
       actions_descriptor = "Nice of them to label the ATM control system. Bit of manipulation and I can get any ATM to drop its cash into my hands!"
       points = 50
-      fun_fact = ""
+      fun_fact = "A fun fact! \n"
       install_malware_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Install Ransomware"
       actions_descriptor = "Ha! Let’s see them try and be a bank when their systems are encrypted by me! Should be worth a couple of million to unblock this!"
       points = 60
-      fun_fact = ""
+      fun_fact = "A fun fact! \n"
       install_malware_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_exploit_option1)
@@ -114,17 +114,17 @@ What does the attack look like?
       descriptor = "Fake a phone call"
       actions_descriptor = "Fake the source number, a little bit of phone line interference, fake a bit of a cold, and demand some card details, and they’ll never know who they’re really talking to!"
       points = 40
-      fun_fact = ""
+      fun_fact = "A fun fact! \n"
       install_malware_exploit_option1 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Send a spoofed email"
       actions_descriptor = "If I ask for card details whilst pretending to be someone high up in the organisation, I bet they’ll respond with everything I ask for, especially if I turn up the heat!"
       points = 50
-      fun_fact = ""
+      fun_fact = "A fun fact! \n"
       install_malware_exploit_option2 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
       descriptor = "Install a key logger"
       actions_descriptor = "A nice little present to pick up all their key strokes. A bit of analysis and I’ll be able to see every single card and account number they enter!"
       points = 60
-      fun_fact = ""
+      fun_fact = "A fun fact! \n"
       install_malware_exploit_option3 = Option(self.act_number, descriptor, actions_descriptor, points, fun_fact)
 
       self.options.append(install_malware_exploit_option1)
